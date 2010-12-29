@@ -1,8 +1,8 @@
 dataSource {
     pooled = true
-    driverClassName = "org.hsqldb.jdbcDriver"
-    username = "sa"
-    password = ""
+    driverClassName = "org.postgresql.Driver"
+    username = "javacup11"
+    password = "javacup11"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -14,7 +14,7 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            url = "jdbc:hsqldb:mem:devDB"
+            url = "jdbc:postgresql://localhost/javacup11"
         }
     }
     test {
@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+           url = "jdbc:postgresql://localhost/javacup11"
         }
     }
 }

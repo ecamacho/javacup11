@@ -17,7 +17,24 @@
        	<div id="header">
 		  <span class="title">javaCup 2011</span>
 		  <ul id="menu">
+            <li>
+              <a href="/">home</a>
+			</li>
 			<li>
+              <sec:ifNotLoggedIn>
+               <g:link controller="team" action="index">login</g:link></li>
+              </sec:ifNotLoggedIn>
+              <sec:ifLoggedIn>
+               <g:link controller="logout">logout</g:link></li>
+              </sec:ifLoggedIn>
+
+			<li>
+            <sec:ifLoggedIn>
+              <li>
+                <g:link controller="team" action="index">mi equipo</g:link></li>
+			  <li>
+            </sec:ifLoggedIn>
+            <li>
               <g:link controller="download" action="show">descargar</g:link></li>
 			<li>
               <g:link controller="secUser" action="create">reg&iacute;strate</g:link>
