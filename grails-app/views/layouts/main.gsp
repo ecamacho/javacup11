@@ -17,13 +17,43 @@
        	<div id="header">
 		  <span class="title">javaCup 2011</span>
 		  <ul id="menu">
-			<li class="active"><a href="#">descargar</a></li>
-			<li><a href="#">reg&iacute;strate</a></li>
-			<li><a href="#">bases</a></li>
-			<li><a href="#">foro</a></li>
+			<li>
+              <g:link controller="download" action="show">descargar</g:link></li>
+			<li>
+              <g:link controller="secUser" action="create">reg&iacute;strate</g:link>
+            </li>
+			<li>
+			  <g:link controller="rule" action="show">bases</g:link>
+            </li>
+			<li><a href="http://www.javahispano.org/forum/javacup/es/">foro</a></li>
 		  </ul>
 	    </div>
         <g:layoutBody />
+        <div class="wrap">
+		<div class="col">
+			<h3><span class="red"></span></h3>
+			<p>
+
+            </p>
+		</div>
+		<div class="col">
+			<h3><span class="red">Patocinadores</span></h3>
+			<p>
+              <a href="http://extrema-sistemas.com/">
+                <img src="${resource(dir:'images',file:'logo_Extrema.png')}"/>
+              </a>
+            </p>
+		</div>
+		<div class="col last">
+			<h3> <span class="red">Patrocinadores</span></h3>
+			<p>
+              <a href="http://www.escueladegroovy.com/">
+                <img src="${resource(dir:'images',file:'logoEscuelaGroovy.jpg')}"/>
+              </a>
+            </p>
+
+		</div>
+	</div>
         <div id="footer">
 		  <p class="right">Design: Luka Cvrk, <a title="Awsome Web Templates" href="http://www.solucija.com/">Solucija</a></p>
 		  <p>&copy; javaHispano 2011 </p>

@@ -1,47 +1,62 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<title>javacup</title>
+<title>javacup 2011</title>
 <meta name="layout" content="main" />
+<script type="text/javascript">
+  function register() {
+    location='<g:createLink controller="secUser" action="create"/>';
+  }
+
+</script>
 </head>
 <body>
 
 
 	<div id="teaser">
 		<div class="wrap">
-			<div id="image"></div>
-			<div class="box">
-				<h2>Welcome to <em title="Sharing, Data Management and Collaboration">Web Application</em></h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis justo viverra nunc. Donec eu ipsum molestie eros condimentum malesuada. Sed quis velit vel augue sollicitudin aliquet. Quisque dignissim. Proin vehicula sem tempor velit. Pellentesque aliquam ante vitae pede. Nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis justo viverra nunc.</p>
+			<div id="image">
+              <object width="480" height="385">
+                <param name="movie" value="http://www.youtube.com/v/TeSimMk6dc0?fs=1&amp;hl=es_ES"></param>
+                <param name="allowFullScreen" value="true"></param>
+                <param name="allowscriptaccess" value="always"></param>
+                <embed src="http://www.youtube.com/v/TeSimMk6dc0?fs=1&amp;hl=es_ES"
+                        type="application/x-shockwave-flash" allowscriptaccess="always"
+                        allowfullscreen="true" width="480" height="385"></embed>
+              </object>
 			</div>
+			<div class="box">
+				<h2>Ya esta aqu&iacute; la javaCup 2011</h2>
+				<p>
+                  El torneo de programaci&oacute;n de javaHispano.
+                  Descarga el framework y programa tu equipo, compite contra otros jugadores
+                  por premios en efectivo.
+
+
+				</p>
+                 <button class="large red awesome"
+                 onclick="register()">Reg&iacute;strate &raquo;</button>
+			</div>
+
+
+             <a href="http://www.javahispano.org" class="signBox">
+                 <img src="${resource(dir:'images',file:'logoJavaHispano.png')}" />
+              </a>
+
+
+
 		</div>
 	</div>
 
 	<div id="bar">
 		<div class="wrap">
-			<span class="step"><a>1</a> sharing</span>
-			<span class="step"><a>2</a> data management</span>
-			<span class="step"><a>3</a> collaboration</span>
+			<span class="step"><a>1</a> Inscr&iacute;bete</span>
+			<span class="step"><a>2</a> Programa la t&aacute;ctica de tu equipo</span>
+			<span class="step"><a>3</a> Compite contra otros participantes</span>
 		</div>
 	</div>
 
-	<div class="wrap">
-		<div class="col">
-			<h3>What's <span class="red">New?</span></h3>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer porta, ipsum sit amet ultricies congue, ante pede congue pede, id venenatis ante elit et nulla. Ut lectus nisi, convallis in, eleifend vitae, blandit non, orci. Aliquam eget ante. Cras orci ante, interdum ac, euismod et, euismod in, eros. Cras vestibulum elit quis arcu. Suspendisse lectus ligula, posuere ut, ullamcorper eget, lobortis et, tellus. Suspendisse pulvinar metus.</p>
-		</div>
-		<div class="col">
-			<h3>User <span class="red">Statistics</span></h3>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer porta, ipsum sit amet ultricies congue, ante pede congue pede, id venenatis ante elit et nulla. Ut lectus nisi, convallis in, eleifend vitae, blandit non, orci. Aliquam eget ante. Cras orci ante, interdum ac, euismod et, euismod in, eros. Cras vestibulum elit quis arcu. Suspendisse lectus ligula, posuere ut, ullamcorper eget, lobortis et, tellus. Suspendisse pulvinar metus.</p>
-		</div>
-		<div class="col last">
-			<h3>About <span class="red">Web Application</span></h3>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer porta, ipsum sit amet ultricies congue, ante pede congue pede, id venenatis ante elit et nulla. Ut lectus nisi, convallis in, eleifend vitae, blandit non, orci.</p>
-			<p class="info">If you liked this template, you might like some other Free CSS Templates from <a href="http://www.solucija.com" title="Awsome Web Templates">Solucija</a>.</p>
-		</div>
-	</div>
+
 
 
 </body>

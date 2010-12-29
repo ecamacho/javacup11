@@ -14,7 +14,7 @@
         <h2>Registro completado</h2>
       </div>
         <p>
-          En breve podr&oacute;s subir tus t&aacute;cticas.
+          En breve podr&aacute;s subir tus t&aacute;cticas.
         </p>
         </div>
     </body>

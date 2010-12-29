@@ -19,22 +19,33 @@ class SecUserController {
         return [secUserInstance: secUserInstance]
     }
 
+    def completed = {}
+
     def save = {
 
-        def secUserInstance = new SecUser(params)
-        secUserInstance.enabled = true
-        secUserInstance.accountExpired = false
-        secUserInstance.accountLocked = false
 
-        if (secUserInstance.save(flush: true)) {
-            def userRole = SecRole.findByAuthority('ROLE_USER')
-            SecUserSecRole.create secUserInstance, userRole
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'secUser.label', default: 'SecUser'), secUserInstance.id])}"
-            redirect(action: "show", id: secUserInstance.id)
+        def secUserInstance = new SecUser(params)
+        if(secUserInstance.doesTeamExists( secUserInstance.team ) ) {
+            flash.message = "Ya existe un equipo con el nombre $secUserInstance.team"
+            render(view: "create", model: [secUserInstance: secUserInstance])
+
         }
         else {
+         secUserInstance.enabled = true
+         secUserInstance.accountExpired = false
+         secUserInstance.accountLocked = false
+
+         if (secUserInstance.save(flush: true)) {
+            def userRole = SecRole.findByAuthority('ROLE_USER')
+            SecUserSecRole.create secUserInstance, userRole
+            redirect(action: "completed")
+         }
+         else {
             render(view: "create", model: [secUserInstance: secUserInstance])
+         }
         }
+
+
     }
 
     def show = {

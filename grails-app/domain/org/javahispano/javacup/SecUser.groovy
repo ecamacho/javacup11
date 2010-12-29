@@ -28,4 +28,10 @@ class SecUser {
 	Set<SecRole> getAuthorities() {
 		SecUserSecRole.findAllBySecUser(this).collect { it.secRole } as Set
 	}
+
+    Boolean doesTeamExists( String t ) {
+      def results = SecUser.findAll('from SecUser where upper(team) = :team',
+              [team:t.toUpperCase()])
+      results.size() > 0
+    }
 }
