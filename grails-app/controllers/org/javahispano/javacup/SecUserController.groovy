@@ -4,6 +4,8 @@ class SecUserController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def springSecurityService
+
     def index = {
         redirect(action: "list", params: params)
     }
@@ -34,7 +36,7 @@ class SecUserController {
          secUserInstance.enabled = true
          secUserInstance.accountExpired = false
          secUserInstance.accountLocked = false
-
+         secUserInstance.password = springSecurityService.encodePassword( secUserInstance.password )
          if (secUserInstance.save(flush: true)) {
             def userRole = SecRole.findByAuthority('ROLE_USER')
             SecUserSecRole.create secUserInstance, userRole

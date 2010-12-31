@@ -99,6 +99,7 @@ grails.plugins.springsecurity.authority.className = 'org.javahispano.javacup.Sec
 grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
 grails.plugins.springsecurity.interceptUrlMap = [
     '/rule/show':           ['IS_AUTHENTICATED_ANONYMOUSLY'],
+    '/secUser/save':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
     '/secUser/create':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
     '/secUser/completed':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
     '/team/*':              ['ROLE_USER', 'ROLE_ADMIN'],

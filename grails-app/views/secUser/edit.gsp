@@ -6,9 +6,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'secUser.label', default: 'SecUser')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <title>javaCup 2011</title>
     </head>
     <body>
+        <br /><br />
+     <div id="infobox">
+      <div class="titlebox">
+        <h2>Admin</h2>
+      </div>
+
+
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
@@ -112,5 +119,6 @@
                 </div>
             </g:form>
         </div>
+       </div>
     </body>
 </html>

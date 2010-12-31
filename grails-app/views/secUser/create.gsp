@@ -45,7 +45,22 @@
                                     <g:passwordField name="password" value="${secUserInstance?.password}" />
                                 </td>
                             </tr>
-
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="firstName"><g:message code="secUser.firstName.label" default="Nombre" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'firstName', 'errors')}">
+                                    <g:textField name="firstName" value="${secUserInstance?.firstName}" />
+                                </td>
+                            </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="lastName"><g:message code="secUser.lastName.label" default="Apellidos" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'lastName', 'errors')}">
+                                    <g:textField name="lastName" value="${secUserInstance?.lastName}" />
+                                </td>
+                            </tr>
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="email"><g:message code="secUser.email.label" default="Email" /></label>
@@ -82,7 +97,9 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Registrarse')}" /></span>
+                    <span class="button">
+                      <g:submitButton  name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Registrarse')}"/>
+                    </span>
                 </div>
             </g:form>
         </p>

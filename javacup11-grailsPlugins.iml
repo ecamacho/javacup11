@@ -84,6 +84,7 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework.security/org.springframework.security.web/jars/org.springframework.security.web-3.0.3.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework.security/org.springframework.security.core/jars/org.springframework.security.core-3.0.3.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/dumbster/dumbster/jars/dumbster-1.6.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/postgresql/postgresql/jars/postgresql-8.1-407.jdbc3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

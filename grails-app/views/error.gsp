@@ -1,6 +1,6 @@
 <html>
   <head>
-	  <title>Grails Runtime Exception</title>
+	  <title>javaCup11</title>
 	  <style type="text/css">
 	  		.message {
 	  			border: 1px solid black;
@@ -21,12 +21,18 @@
 	  			font-family:courier;
 	  		}
 	  </style>
-  </head>
 
-  <body>
-    <h1>Grails Runtime Exception</h1>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="layout" content="main" />
+        <g:set var="entityName" value="${message(code: 'secUser.label', default: 'SecUser')}" />
+
+    </head>
+    <body>
+        <br /><br />
+     <div id="infobox">
+      <div class="titlebox">
     <h2>Error Details</h2>
-
+    </div>
   	<div class="message">
 		<strong>Error ${request.'javax.servlet.error.status_code'}:</strong> ${request.'javax.servlet.error.message'.encodeAsHTML()}<br/>
 		<strong>Servlet:</strong> ${request.'javax.servlet.error.servlet_name'}<br/>
@@ -50,5 +56,6 @@
 	      <pre><g:each in="${exception.stackTraceLines}">${it.encodeAsHTML()}<br/></g:each></pre>
 	    </div>
 	</g:if>
+       </div>
   </body>
 </html>

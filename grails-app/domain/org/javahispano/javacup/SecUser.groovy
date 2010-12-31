@@ -6,6 +6,8 @@ class SecUser {
 	String password
     String email
     String team
+    String firstName
+    String lastName
 	boolean enabled
 	boolean accountExpired
     boolean teamRejected
@@ -18,7 +20,7 @@ class SecUser {
 		password blank: false
         email blank:false, unique:true, email: true
         team blank:false, unique:true, minSize: 3
-
+        firstName blank:false, minSize:5
 	}
 
 	static mapping = {
