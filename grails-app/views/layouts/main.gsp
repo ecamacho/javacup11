@@ -4,6 +4,8 @@
         <title><g:layoutTitle default="javaCup 2011" /></title>
         <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
         <link  href="//fonts.googleapis.com/css?family=Lobster:regular" rel="stylesheet" type="text/css" >
+        <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
 
         <!--[if IE]><script src="js/html5.js"></script><![endif]-->
