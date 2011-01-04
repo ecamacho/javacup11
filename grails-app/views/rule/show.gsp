@@ -41,10 +41,10 @@
             en el equipo de f&uacute;tbol definitivo de dicho concursante.
           Ver anexo de normas de aceptaci&oacute;n.</li>
 
-          <li>El plazo para el env&iacute;o de equipos de f&uacute;tbol es desde el ????? hasta el
-          ????? a las 23:59:59 horas de Madrid (UTC +1).
+          <li>El plazo para el env&iacute;o de equipos de f&uacute;tbol es desde el 5 de enero hasta el
+          5 de febrero a las 23:59:59 horas de Madrid (UTC +1).
           De haber alg&uacute;n problema se le notificar&aacute;
-            al concursante a trav&eacute;;s de un correo electr&oacute;nico.
+            al concursante a trav&eacute;s de un correo electr&oacute;nico.
           &Eacute;ste tendr&aacute; un plazo de 3 d&iacute;as desde el d&iacute;a de env&iacute;o de
           la notificaci&oacute;n para solucionar solo la deficiencia reportada.
           Cada participante s&oacute;lo tendr&aacute; una oportunidad para resolver las
@@ -94,6 +94,15 @@
           <li>El resultado del partido final se anunciar&aacute; en Madrid, durante el
           evento <a href='http://www.springio.net'>Spring I/O</a>  el 18 de febrero de 2011.
         </ol>
+        <br/>
+        <span class='rulesTitle'>&lt;Premios&gt;</span>
+        <br /><br />
+        <ul>
+          <li>1er lugar: 1000 €</li>
+          <li>2o lugar: 500 €</li>
+          <li>3er lugar: 250 €</li>
+          <li>4o lugar: 125 €</li>
+        </ul>
         <br/>
         <span class="rulesTitle">&lt;Normas de aceptaci&oacute;n&gt;</span>
         <br /><br />

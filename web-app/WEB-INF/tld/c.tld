@@ -310,7 +310,7 @@ Name of the exported scoped variable for the
 status of the iteration. Object exported is of
 type
 javax.servlet.jsp.jstl.core.LoopTag
-Status. This scoped variable has nested
+javacup11.Status. This scoped variable has nested
 visibility.
         </description>
 	<name>varStatus</name>

@@ -50,8 +50,9 @@ class BootStrap {
                 email:'ecamacho@javahispano.org',
                 team : 'javahispano',
                 firstName: 'admin',
-                lastName: 'javahispano',
-              country: adminCountry).save(failOnError: true)
+                lastName: 'javahispano'
+
+              , country: adminCountry).save(failOnError: true)
       if (!adminUser.authorities.contains(adminRole)) {
             SecUserSecRole.create adminUser, adminRole
       }

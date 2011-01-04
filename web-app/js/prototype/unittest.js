@@ -114,7 +114,7 @@ Test.Unit.Logger.prototype = {
     this.log.innerHTML =
     '<div id="logsummary"></div>' +
     '<table id="logtable">' +
-    '<thead><tr><th>Status</th><th>Test</th><th>Message</th></tr></thead>' +
+    '<thead><tr><th>javacup11.Status</th><th>Test</th><th>Message</th></tr></thead>' +
     '<tbody id="loglines"></tbody>' +
     '</table>';
     this.logsummary = $('logsummary');
