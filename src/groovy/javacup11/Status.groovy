@@ -8,7 +8,7 @@ package javacup11
  */
 enum Status {
       CREATED("CRT", 'CREATED'),
-      HAS_TACTIC("HST", "HAS_TACTIC"),
+      UPLOADED("UPL", "UPLOADED"),
       REJECTED("REJ", "Rejected"),
       ACCEPTED("ACP", "Acepted")
 

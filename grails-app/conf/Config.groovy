@@ -90,6 +90,8 @@ log4j = {
     warn   'org.mortbay.log'
 }
 
+grails.mail.default.from="javacup@javahispano.org"
+
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.javahispano.javacup.SecUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.javahispano.javacup.SecUserSecRole'

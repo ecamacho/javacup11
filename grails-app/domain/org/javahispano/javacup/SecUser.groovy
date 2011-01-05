@@ -17,6 +17,12 @@ class SecUser {
 	boolean passwordExpired
 
 
+    Status status = Status.CREATED
+    String comment
+    String ipUpload
+    Date uploadDate
+    byte[] tactic
+
     static belongsTo = [country:Country]
 	static constraints = {
 		username blank: false, unique: true, minSize: 3, maxSize: 15
@@ -24,7 +30,10 @@ class SecUser {
         email blank:false, unique:true, email: true
         team blank:false, unique:true, minSize: 3
         firstName blank:false, minSize:5
-
+        tactic nullable:true
+        comment nullable:true
+        ipUpload nullable: true
+        uploadDate nullable: true
 	}
 
 	static mapping = {

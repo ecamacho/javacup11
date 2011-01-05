@@ -14,7 +14,8 @@
         <h2>Registro completado</h2>
       </div>
         <p>
-          En breve podr&aacute;s subir tus t&aacute;cticas.
+          <div class="message">Gracias por registrarte,
+    <g:link controller="team" action="index">haz login</g:link> para poder subir tu t&aacute;ctica</div>
         </p>
         </div>
     </body>
