@@ -39,11 +39,12 @@ class SecUserController {
          secUserInstance.enabled = true
          secUserInstance.accountExpired = false
          secUserInstance.accountLocked = false
+         def pass = secUserInstance.password
          secUserInstance.password = springSecurityService.encodePassword( secUserInstance.password )
          if (secUserInstance.save(flush: true)) {
             def userRole = SecRole.findByAuthority('ROLE_USER')
             SecUserSecRole.create secUserInstance, userRole
-            sendConfirmationMail(secUserInstance)
+            sendConfirmationMail(secUserInstance, pass)
 
             redirect(action: "completed")
          }
@@ -55,7 +56,7 @@ class SecUserController {
 
     }
 
-    def sendConfirmationMail = { user ->
+    def sendConfirmationMail = { user, pass ->
       if ( GrailsUtil.getEnvironment().equals(GrailsApplication.ENV_PRODUCTION) ) {
              sendMail {
 
@@ -68,7 +69,7 @@ class SecUserController {
                         Datos de registro:<br/>
                         <ul>
                           <li>usuario: ${user.username}</li>
-                          <li>password *: ${user.password}</li>
+                          <li>password *: ${pass}</li>
                         </ul>
                         <br/>
                         * no almacenamos tu password en nuestra base de datos,
