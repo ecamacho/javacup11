@@ -43,7 +43,8 @@ class SecUserController {
          if (secUserInstance.save(flush: true)) {
             def userRole = SecRole.findByAuthority('ROLE_USER')
             SecUserSecRole.create secUserInstance, userRole
-            sendConfirmationMail(secUserInstance.email)
+            sendConfirmationMail(secUserInstance)
+
             redirect(action: "completed")
          }
          else {
@@ -54,16 +55,26 @@ class SecUserController {
 
     }
 
-    def sendConfirmationMail = { email ->
+    def sendConfirmationMail = { user ->
       if ( GrailsUtil.getEnvironment().equals(GrailsApplication.ENV_PRODUCTION) ) {
              sendMail {
 
-                to email
+                to user.email
                 subject "[javaCup 2011] Registro en la javaCup 2011"
                 html """Gracias por registrarte en la javaCup 2011<br/>
                         Recuerda que tienes hasta el <strong>5 de febrero</strong>
                         para subir tu t&aacute;ctica haciendo
                         <a href='http://javacup.javahispano.org/team/index'>login</a> en el sitio.<br/>
+                        Datos de registro:<br/>
+                        <ul>
+                          <li>usuario: ${user.username}</li>
+                          <li>password *: ${user.password}</li>
+                        </ul>
+                        <br/>
+                        * no almacenamos tu password en nuestra base de datos,
+                        este mail fue enviado antes de
+                        hacer el digest del mismo. Solo almacenamos el digest de tu password.
+
                         <br/>Mucha suerte. <br/>
                         El equipo de javaHispano"""
 
