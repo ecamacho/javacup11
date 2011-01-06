@@ -45,6 +45,9 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework.security/org.springframework.security.core/jars/org.springframework.security.core-3.0.3.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/dumbster/dumbster/jars/dumbster-1.6.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/postgresql/postgresql/jars/postgresql-8.1-407.jdbc3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/javax.activation/activation/jars/activation-1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/javax.mail/mail/jars/mail-1.4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/org.springframework.test/jars/org.springframework.test-3.0.3.RELEASE.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

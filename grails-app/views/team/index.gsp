@@ -47,5 +47,7 @@
         </p>
       </div>
       </g:elseif>
+      </div>
+    <br/><br/>
     </body>
 </html>
