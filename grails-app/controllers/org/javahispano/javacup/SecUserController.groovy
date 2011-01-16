@@ -129,6 +129,13 @@ class SecUserController {
                   secUserInstance.timesRejected++
                   sendRejectedMail( secUserInstance )
                 }
+
+                else if( oldStatus != secUserInstance.status
+                        && secUserInstance.status == Status.ACCEPTED )
+                {
+
+                  sendAcceptedMail( secUserInstace )
+                }
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'secUser.label', default: 'SecUser'), secUserInstance.id])}"
                 //redirect(action: "show", id: secUserInstance.id)
                 render(view: "edit", model: [secUserInstance: secUserInstance])
@@ -149,6 +156,7 @@ class SecUserController {
              sendMail {
 
                 to user.email
+                bcc "ecamacho@javahispano.org","fabnun@gmail.com"
                 subject "[javaCup 2011] Tactica rechazada"
                 if( !user.timesRejected ) {
                 html """Tu tactica fue rechazada.<br/>
@@ -172,6 +180,31 @@ class SecUserController {
                 }
 
             }
+          }
+
+    }
+
+
+    def sendAcceptedMail = { user ->
+      println("sending rejection mail")
+      if ( GrailsUtil.getEnvironment().equals(GrailsApplication.ENV_PRODUCTION) ) {
+             sendMail {
+
+                to user.email
+                bcc "ecamacho@javahispano.org","fabnun@gmail.com"
+                subject "[javaCup 2011] Tactica aceptada"
+
+                html """Bienvenido al torneo javaCup 11.<br/>
+                        Tu tactica cumple con los requisitos del torneo y ha sido
+                         aceptada. En breve publicaremos el rol de partidos para que
+                         sigas el progreso de tu equipo.
+                        <br/>
+
+                        <br/>Mucha suerte. <br/>
+                        El equipo de javaHispano"""
+                }
+
+
           }
 
     }
