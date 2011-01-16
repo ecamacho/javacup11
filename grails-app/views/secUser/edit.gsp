@@ -10,19 +10,19 @@
     </head>
     <body>
         <br /><br />
-     <div id="infobox">
+     <div id="editbox">
       <div class="titlebox">
-        <h2>Admin</h2>
+        <h2>Editar ${secUserInstance.username}</h2>
       </div>
 
 
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+
         </div>
         <div class="body">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -37,7 +37,8 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
+
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="username"><g:message code="secUser.username.label" default="Username" /></label>
@@ -46,40 +47,15 @@
                                     <g:textField name="username" value="${secUserInstance?.username}" />
                                 </td>
                             </tr>
+
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="password"><g:message code="secUser.password.label" default="Password" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'password', 'errors')}">
-                                    <g:textField name="password" value="${secUserInstance?.password}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="accountExpired"><g:message code="secUser.accountExpired.label" default="Account Expired" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'accountExpired', 'errors')}">
-                                    <g:checkBox name="accountExpired" value="${secUserInstance?.accountExpired}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="accountLocked"><g:message code="secUser.accountLocked.label" default="Account Locked" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'accountLocked', 'errors')}">
-                                    <g:checkBox name="accountLocked" value="${secUserInstance?.accountLocked}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="country"><g:message code="secUser.country.label" default="Country" /></label>
+                                  <label for="country.id"><g:message code="secUser.country.label" default="Country" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'country', 'errors')}">
-                                    <g:select name="country.id" from="${org.javahispano.javacup.Country.list()}" optionKey="id" value="${secUserInstance?.country?.id}"  />
+                                    <g:select name="country.id" from="${org.javahispano.javacup.Country.list()}"
+                                            optionKey="id" value="${secUserInstance?.country?.id}" optionValue="name" />
                                 </td>
                             </tr>
                         
@@ -100,16 +76,28 @@
                                     <g:checkBox name="enabled" value="${secUserInstance?.enabled}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="passwordExpired"><g:message code="secUser.passwordExpired.label" default="Password Expired" /></label>
+                                  <label for="status"><g:message code="secUser.status.label" default="Status" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'passwordExpired', 'errors')}">
-                                    <g:checkBox name="passwordExpired" value="${secUserInstance?.passwordExpired}" />
+                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'status', 'errors')}">
+                                    <g:select name="status" from="${javacup11.Status.values()}"
+                                             value="${secUserInstance?.status}" optionValue="value" />
                                 </td>
                             </tr>
-                        
+
+
+                            <tr class="prop" >
+                                <td valign="top" class="name">
+                                  <label for="comment"><g:message code="secUser.status.label" default="Comentario para rechazados" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: secUserInstance, field: 'comment', 'errors')}">
+
+                                    <g:textArea name="comment" rows="7" cols="1" value="${secUserInstance?.comment}" />
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -120,5 +108,6 @@
             </g:form>
         </div>
        </div>
+    <br/><br/>
     </body>
 </html>

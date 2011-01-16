@@ -1,5 +1,6 @@
 package org.javahispano.javacup
 
+import javacup11.Status
 import grails.util.GrailsUtil
 import org.codehaus.groovy.grails.commons.GrailsApplication
 
@@ -118,10 +119,19 @@ class SecUserController {
                     return
                 }
             }
+            def oldStatus = secUserInstance.status
             secUserInstance.properties = params
             if (!secUserInstance.hasErrors() && secUserInstance.save(flush: true)) {
+
+                if( oldStatus != secUserInstance.status
+                        && secUserInstance.status == Status.REJECTED )
+                {
+                  secUserInstance.timesRejected++
+                  sendRejectedMail( secUserInstance )
+                }
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'secUser.label', default: 'SecUser'), secUserInstance.id])}"
-                redirect(action: "show", id: secUserInstance.id)
+                //redirect(action: "show", id: secUserInstance.id)
+                render(view: "edit", model: [secUserInstance: secUserInstance])
             }
             else {
                 render(view: "edit", model: [secUserInstance: secUserInstance])
@@ -131,6 +141,39 @@ class SecUserController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'secUser.label', default: 'SecUser'), params.id])}"
             redirect(action: "list")
         }
+    }
+
+    def sendRejectedMail = { user ->
+      println("sending rejection mail")
+      if ( GrailsUtil.getEnvironment().equals(GrailsApplication.ENV_PRODUCTION) ) {
+             sendMail {
+
+                to user.email
+                subject "[javaCup 2011] Tactica rechazada"
+                if( !user.timesRejected ) {
+                html """Tu tactica fue rechazada.<br/>
+                        Recuerda que tienes solo una  oportunidad mas
+                        para subir tu t&aacute;ctica corrigiendo los errores
+                        aqui se&ntilde;alados.
+                        <br/>
+                        <strong>Motivo de rechazo</strong></br>
+                        ${user.comment}
+                        <br/>Mucha suerte. <br/>
+                        El equipo de javaHispano"""
+                } else {
+                  html """Tu tactica fue rechazada nuevamente<br/>
+                        Ya no tienes m&aacute;s oportunidades
+                        para subir tu t&aacute;ctica.
+                        <br/>
+                        <strong>Motivo de rechazo</strong></br>
+                        ${user.comment}
+                        <br/>Gracias por participar. <br/>
+                        El equipo de javaHispano"""
+                }
+
+            }
+          }
+
     }
 
     def delete = {

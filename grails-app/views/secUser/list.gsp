@@ -11,7 +11,7 @@
         <br /><br />
      <div id="infobox">
       <div class="titlebox">
-        <h2>Admin</h2>
+        <h2>Usuarios</h2>
       </div>
 
 
@@ -20,7 +20,7 @@
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -32,13 +32,17 @@
                             <g:sortableColumn property="id" title="${message(code: 'secUser.id.label', default: 'Id')}" />
                         
                             <g:sortableColumn property="username" title="${message(code: 'secUser.username.label', default: 'Username')}" />
-                        
-                            <g:sortableColumn property="password" title="${message(code: 'secUser.password.label', default: 'Password')}" />
-                        
-                            <g:sortableColumn property="accountExpired" title="${message(code: 'secUser.accountExpired.label', default: 'Account Expired')}" />
-                        
-                            <g:sortableColumn property="accountLocked" title="${message(code: 'secUser.accountLocked.label', default: 'Account Locked')}" />
-                        
+
+                            <g:sortableColumn property="firstName" title="${message(code: 'secUser.firstName.label', default: 'Nombre')}" />
+
+                            <g:sortableColumn property="lastName" title="${message(code: 'secUser.lastName.label', default: 'Apellidos')}" />
+
+                            <g:sortableColumn property="email" title="${message(code: 'secUser.email.label', default: 'Email')}" />
+
+                            <g:sortableColumn property="team" title="${message(code: 'secUser.team.label', default: 'Equipo')}" />
+
+                            <g:sortableColumn property="status" title="${message(code: 'secUser.status.label', default: 'Status')}" />
+
                             <th><g:message code="secUser.country.label" default="Country" /></th>
                         
                         </tr>
@@ -47,17 +51,22 @@
                     <g:each in="${secUserInstanceList}" status="i" var="secUserInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${secUserInstance.id}">${fieldValue(bean: secUserInstance, field: "id")}</g:link></td>
+                            <td><g:link action="edit" id="${secUserInstance.id}">${fieldValue(bean: secUserInstance, field: "id")}</g:link></td>
                         
                             <td>${fieldValue(bean: secUserInstance, field: "username")}</td>
                         
-                            <td>${fieldValue(bean: secUserInstance, field: "password")}</td>
+                            <td>${fieldValue(bean: secUserInstance, field: "firstName")}</td>
+
+                            <td>${fieldValue(bean: secUserInstance, field: "lastName")}</td>
+
+                            <td>${fieldValue(bean: secUserInstance, field: "email")}</td>
+
+                            <td>${fieldValue(bean: secUserInstance, field: "team")}</td>
+
+                            <td>${fieldValue(bean: secUserInstance, field: "status.value")}</td>
+
                         
-                            <td><g:formatBoolean boolean="${secUserInstance.accountExpired}" /></td>
-                        
-                            <td><g:formatBoolean boolean="${secUserInstance.accountLocked}" /></td>
-                        
-                            <td>${fieldValue(bean: secUserInstance, field: "country")}</td>
+                            <td>${fieldValue(bean: secUserInstance, field: "country.name")}</td>
                         
                         </tr>
                     </g:each>
@@ -69,5 +78,6 @@
             </div>
         </div>
        </div>
+      </div>
     </body>
 </html>

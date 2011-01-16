@@ -7,7 +7,7 @@
         <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
         <!--[if IE]><script src="js/html5.js"></script><![endif]-->
         <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/ie7.css"><![endif]-->
 

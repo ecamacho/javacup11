@@ -59,6 +59,14 @@ body { margin: 50px 0 0; background: #fff url(../images/bg.gif) repeat-x; font: 
 -moz-box-shadow: 0 1px 3px #999;
 -webkit-box-shadow: 0 1px 3px #999;
 }
+
+#editbox { clear: both;  height: 500px; width: 900px; margin: 0 auto; padding: 15px;
+   background-color:#f5f5dc; font-family:Helvetica; font-size:14px;
+   -moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+}
 #rulesbox { clear: both;  width: 900px; margin: 0 auto; padding: 15px;
    background-color:#f5f5dc; font-family:Droid Serif,Helvetica; font-size:14px;
    -moz-border-radius: 10px;
