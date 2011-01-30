@@ -44,6 +44,11 @@
               </sec:ifLoggedIn>
 
 			<li>
+            <sec:ifAllGranted roles="ROLE_ADMIN">
+            <li>
+                <g:link controller="secUser" action="list">equipos</g:link></li>
+			  <li>
+            </sec:ifAllGranted>
             <sec:ifLoggedIn>
               <li>
                 <g:link controller="team" action="index">mi equipo</g:link></li>

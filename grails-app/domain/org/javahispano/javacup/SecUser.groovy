@@ -22,7 +22,7 @@ class SecUser {
     String ipUpload
     Date uploadDate
     byte[] tactic
-    int timesRejected = 0
+    Integer timesRejected = 0
 
     static belongsTo = [country:Country]
 	static constraints = {

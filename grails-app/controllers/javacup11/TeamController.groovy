@@ -10,8 +10,11 @@ class TeamController {
     def springSecurityService
 
     def index = {
-       def user = SecUser.get(springSecurityService.principal.id)
-       [hasTactic:user.tactic != null]
+      def user = SecUser.get(springSecurityService.principal.id)
+      def hasTactic = user.tactic != null
+      def rejected = user.teamRejected
+      def canReupload = rejected && user.timesRejected == 1
+      [hasTactic:hasTactic, rejected:rejected, canReupload:canReupload]
     }
 
     def save = {

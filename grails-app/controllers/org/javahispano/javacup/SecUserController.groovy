@@ -128,17 +128,20 @@ class SecUserController {
                 {
                   secUserInstance.timesRejected++
                   sendRejectedMail( secUserInstance )
+                  secUserInstance.teamRejected = true
                 }
 
                 else if( oldStatus != secUserInstance.status
                         && secUserInstance.status == Status.ACCEPTED )
                 {
 
-                  sendAcceptedMail( secUserInstace )
+                  sendAcceptedMail( secUserInstance )
+                  secUserInstance.teamRejected = false
                 }
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'secUser.label', default: 'SecUser'), secUserInstance.id])}"
                 //redirect(action: "show", id: secUserInstance.id)
                 render(view: "edit", model: [secUserInstance: secUserInstance])
+
             }
             else {
                 render(view: "edit", model: [secUserInstance: secUserInstance])
