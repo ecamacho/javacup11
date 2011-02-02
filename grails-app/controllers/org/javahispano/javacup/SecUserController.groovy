@@ -40,6 +40,7 @@ class SecUserController {
          secUserInstance.enabled = true
          secUserInstance.accountExpired = false
          secUserInstance.accountLocked = false
+         secUserInstance.timesRejected = 0
          def pass = secUserInstance.password
          secUserInstance.password = springSecurityService.encodePassword( secUserInstance.password )
          if (secUserInstance.save(flush: true)) {
@@ -110,6 +111,9 @@ class SecUserController {
     def update = {
         def secUserInstance = SecUser.get(params.id)
         if (secUserInstance) {
+            if( secUserInstance.timesRejected == null ){
+                      secUserInstance.timesRejected = 0
+            }
             if (params.version) {
                 def version = params.version.toLong()
                 if (secUserInstance.version > version) {
