@@ -40,7 +40,7 @@ class TeamController {
                 to "ecamacho@javahispano.org","fabnun@gmail.com"
                 subject "[javaCup 2011] Nueva tactica de ${user.username}"
                 body "${user.username} ha subido la tactica del equipo ${user.team}"
-                attachBytes "${user.team}.zip", "application/zip", tactic.bytes
+                attachBytes "${user.team}.zip", "application/zip", bytes
             }
           }
 
