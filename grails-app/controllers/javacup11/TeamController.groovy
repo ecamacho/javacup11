@@ -13,7 +13,9 @@ class TeamController {
       def user = SecUser.get(springSecurityService.principal.id)
       def hasTactic = user.tactic != null
       def rejected = user.teamRejected
-      def canReupload = rejected && user.timesRejected == 1
+      int timesRejected = user.timesRejected != null?:0
+      def canReupload = rejected && timesRejected == 1
+
       [hasTactic:hasTactic, rejected:rejected, canReupload:canReupload]
     }
 

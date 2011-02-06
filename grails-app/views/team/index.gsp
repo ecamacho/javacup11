@@ -58,24 +58,13 @@
       </g:if>
       <g:elseif test="${!hasTactic}">
         <div>
-        <p>
-          Sube el c&oacute;digo fuente de tu t&aacute;ctica. Solo se aceptan archivos
-          .zip
-        </p>
-        <p>
-          Revisaremos tu t&aacute;ctica y te notificaremos por correo si fue aceptada en el torneo
-          o rechazada. Si es rechazada, tendr&aacute;s una oportunidad m&aacute;s para enviarla.
-        </p>
-        <p>
-          Recuerda que el torneo empieza el 5 de febrero.
-        </p>
-        <p>
-          <g:form controller="team" method="post" action="save" enctype="multipart/form-data">
-            <input type="file" name="tactic"/>
-            <input type="submit"/>
-          </g:form>
 
+        <p>
+          El plazo para subir tu t&aacute;ctica ha terminado.
+          Te esperamos el pr&oacute;ximo a&ntilde;o
         </p>
+
+
       </div>
       </g:elseif>
       </div>
