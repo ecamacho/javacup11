@@ -55,6 +55,9 @@
 			  <li>
             </sec:ifLoggedIn>
             <li>
+              <g:link controller="partidos" action="index">partidos</g:link></li>
+			<li>
+            <li>
               <g:link controller="download" action="show">descargar</g:link></li>
 			<li>
               <g:link controller="secUser" action="create">reg&iacute;strate</g:link>
